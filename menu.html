@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CraveGo | Menu</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="top-bar">
+    🍕 Flat ₹100 OFF on orders above ₹799
+</div>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <span>🍴</span>
+
+        <div>
+            <strong>CraveGo</strong>
+            <small>FOOD • DELIVERED</small>
+        </div>
+
+    </a>
+
+
+    <div class="location">
+
+        <span>📍</span>
+
+        <div>
+            <small>Deliver to</small>
+            <strong id="locationText">Mumbai</strong>
+        </div>
+
+    </div>
+
+
+    <div class="search-box">
+
+        🔍
+
+        <input
+            type="text"
+            id="menuSearch"
+            placeholder="Search food, restaurant or cuisine..."
+        >
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="menu.html" class="active">
+            Menu
+        </a>
+
+        <a href="cart.html">
+            🛒 Cart
+            <span class="nav-count" id="cartCount">0</span>
+        </a>
+
+        <a href="admin.html">
+            Admin
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= MENU ================= -->
+
+<main class="menu-page">
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="page-title">
+
+        <span>OUR MENU</span>
+
+        <h1>
+            Choose your favourite food
+        </h1>
+
+        <p>
+            From pizzas and burgers to biryani and desserts,
+            find something delicious for every craving.
+        </p>
+
+    </div>
+
+
+    <!-- ================= CATEGORY FILTER ================= -->
+
+    <div
+        class="menu-categories"
+        id="categoryButtons"
+    >
+
+        <button
+            class="category-filter active"
+            data-category="All"
+            type="button"
+        >
+            All
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="Pizza"
+            type="button"
+        >
+            🍕 Pizza
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="Burgers"
+            type="button"
+        >
+            🍔 Burgers
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="Biryani"
+            type="button"
+        >
+            🍛 Biryani
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="North Indian"
+            type="button"
+        >
+            🥘 North Indian
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="Chinese"
+            type="button"
+        >
+            🥡 Chinese
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="South Indian"
+            type="button"
+        >
+            🥞 South Indian
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="Street Food"
+            type="button"
+        >
+            🌮 Street Food
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="Momos"
+            type="button"
+        >
+            🥟 Momos
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="Healthy"
+            type="button"
+        >
+            🥗 Healthy
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="Desserts"
+            type="button"
+        >
+            🍰 Desserts
+        </button>
+
+
+        <button
+            class="category-filter"
+            data-category="Beverages"
+            type="button"
+        >
+            🥤 Beverages
+        </button>
+
+    </div>
+
+
+    <!-- ================= TOOLBAR ================= -->
+
+    <div class="menu-toolbar">
+
+        <div>
+
+            <strong id="resultCount">
+                Showing all dishes
+            </strong>
+
+        </div>
+
+
+        <select id="sortFood">
+
+            <option value="recommended">
+                Recommended
+            </option>
+
+            <option value="rating">
+                Rating
+            </option>
+
+            <option value="priceLow">
+                Price: Low to High
+            </option>
+
+            <option value="priceHigh">
+                Price: High to Low
+            </option>
+
+            <option value="delivery">
+                Fast Delivery
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOD GRID
+         JavaScript will render food cards here
+    ====================================================== -->
+
+    <section
+        class="food-grid"
+        id="foodGrid"
+    >
+
+    </section>
+
+
+    <!-- ================= EMPTY MENU ================= -->
+
+    <div
+        class="empty-menu"
+        id="emptyMenu"
+        style="display:none;"
+    >
+
+        <div>
+            🍽️
+        </div>
+
+        <h2>
+            No food found
+        </h2>
+
+        <p>
+            Try another search or category.
+        </p>
+
+        <button
+            class="btn primary-btn"
+            id="resetMenu"
+            type="button"
+        >
+            Show All Food
+        </button>
+
+    </div>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div>
+
+            <div class="footer-logo">
+
+                🍴
+                <strong>
+                    CraveGo
+                </strong>
+
+            </div>
+
+            <p>
+                Delicious food delivered to your doorstep.
+            </p>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+
+        <div>
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+            <a href="admin.html">
+                Admin
+            </a>
+
+        </div>
+
+
+        <!-- FOOD -->
+
+        <div>
+
+            <h4>
+                Food
+            </h4>
+
+            <a href="menu.html?category=Pizza">
+                Pizza
+            </a>
+
+            <a href="menu.html?category=Burgers">
+                Burgers
+            </a>
+
+            <a href="menu.html?category=Biryani">
+                Biryani
+            </a>
+
+            <a href="menu.html?category=Desserts">
+                Desserts
+            </a>
+
+        </div>
+
+
+        <!-- SUPPORT -->
+
+        <div>
+
+            <h4>
+                Support
+            </h4>
+
+            <p>
+                📞 +91 98765 43210
+            </p>
+
+            <p>
+                ✉ support@cravego.com
+            </p>
+
+            <p>
+                📍 Mumbai, India
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 CraveGo Food Ordering System.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- ================= TOAST ================= -->
+
+<div
+    id="toast"
+    class="toast"
+>
+    Added to cart ✓
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="./javascript.js"></script>
+
+</body>
+
+</html>

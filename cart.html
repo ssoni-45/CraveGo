@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CraveGo | Cart</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<div class="top-bar">
+    🚚 Free delivery on orders above ₹499
+</div>
+
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <span>🍴</span>
+
+        <div>
+            <strong>CraveGo</strong>
+            <small>FOOD • DELIVERED</small>
+        </div>
+
+    </a>
+
+
+    <div class="location">
+
+        📍
+
+        <div>
+            <small>Deliver to</small>
+            <strong>Mumbai</strong>
+        </div>
+
+    </div>
+
+
+    <div class="search-box">
+
+        🔍
+
+        <input
+            type="text"
+            placeholder="Search food..."
+            id="cartSearch">
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+        <a href="cart.html" class="active">
+            🛒 Cart
+            <span class="nav-count" id="cartCount">0</span>
+        </a>
+
+        <a href="admin.html">
+            Admin
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="cart-page">
+
+    <div class="page-title">
+
+        <span>YOUR ORDER</span>
+
+        <h1>
+            Shopping Cart
+        </h1>
+
+        <p>
+            Review your items and place your order.
+        </p>
+
+    </div>
+
+
+    <div class="cart-layout">
+
+
+        <!-- CART ITEMS -->
+
+        <section class="cart-box">
+
+            <div class="cart-box-header">
+
+                <h2>
+                    Your Items
+                </h2>
+
+                <button
+                    id="clearCart"
+                    class="clear-cart">
+                    Clear Cart
+                </button>
+
+            </div>
+
+
+            <div id="cartItems">
+
+                <!-- JavaScript will add items -->
+
+            </div>
+
+
+            <div
+                class="cart-empty-page"
+                id="cartEmpty">
+
+                <div>🛒</div>
+
+                <h2>
+                    Your cart is empty
+                </h2>
+
+                <p>
+                    Looks like you haven't added anything yet.
+                </p>
+
+                <a
+                    href="menu.html"
+                    class="btn primary-btn">
+                    Browse Menu →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUMMARY -->
+
+        <aside class="summary-box">
+
+            <h2>
+                Order Summary
+            </h2>
+
+
+            <div class="summary-line">
+
+                <span>
+                    Item Total
+                </span>
+
+                <strong id="itemTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-line">
+
+                <span>
+                    Delivery Fee
+                </span>
+
+                <strong id="deliveryFee">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-line discount-line">
+
+                <span>
+                    Discount
+                </span>
+
+                <strong id="discount">
+                    - ₹0
+                </strong>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="summary-total">
+
+                <span>
+                    Grand Total
+                </span>
+
+                <strong id="grandTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="coupon-box">
+
+                <input
+                    type="text"
+                    id="couponInput"
+                    placeholder="Enter coupon code">
+
+                <button id="couponBtn">
+                    Apply
+                </button>
+
+            </div>
+
+
+            <button
+                class="checkout-button"
+                id="checkoutButton">
+
+                Proceed to Checkout →
+
+            </button>
+
+
+            <div class="secure-payment">
+
+                🔒 Secure payment
+
+                <br>
+
+                💳 UPI • Card • Cash
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<!-- CHECKOUT MODAL -->
+
+<div
+    class="modal-overlay"
+    id="checkoutModal">
+
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            id="closeCheckout">
+            ×
+        </button>
+
+
+        <h2>
+            Complete Your Order
+        </h2>
+
+        <p>
+            Enter your delivery details.
+        </p>
+
+
+        <label>
+            Full Name
+        </label>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Enter your name">
+
+
+        <label>
+            Mobile Number
+        </label>
+
+        <input
+            type="text"
+            id="customerPhone"
+            placeholder="10 digit mobile number">
+
+
+        <label>
+            Delivery Address
+        </label>
+
+        <textarea
+            id="customerAddress"
+            placeholder="House no., street, area, city..."
+            rows="4">
+        </textarea>
+
+
+        <label>
+            Payment Method
+        </label>
+
+        <select id="paymentMethod">
+
+            <option value="UPI">
+                UPI
+            </option>
+
+            <option value="Card">
+                Credit / Debit Card
+            </option>
+
+            <option value="Cash">
+                Cash on Delivery
+            </option>
+
+        </select>
+
+
+        <button
+            class="btn primary-btn full-btn"
+            id="placeOrder">
+
+            Place Order 🎉
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                🍴 <strong>CraveGo</strong>
+            </div>
+
+            <p>
+                Delicious food delivered to your doorstep.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>Quick Links</h4>
+
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="cart.html">Cart</a>
+            <a href="admin.html">Admin</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>Payment</h4>
+
+            <p>UPI</p>
+            <p>Cards</p>
+            <p>Cash on Delivery</p>
+
+        </div>
+
+
+        <div>
+
+            <h4>Contact</h4>
+
+            <p>📞 +91 98765 43210</p>
+            <p>✉ support@cravego.com</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 CraveGo Food Ordering System.
+    </div>
+
+</footer>
+
+
+<div id="toast" class="toast">
+    Success ✓
+</div>
+
+
+<script src="javascript.js"></script>
+
+</body>
+</html>

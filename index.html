@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CraveGo | Food Ordering System</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="top-bar">
+
+    🚀 Free delivery on orders above ₹499
+
+</div>
+
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+
+    <a href="./index.html" class="logo">
+
+        <span>🍴</span>
+
+        <div>
+
+            <strong>CraveGo</strong>
+
+            <small>FOOD • DELIVERED</small>
+
+        </div>
+
+    </a>
+
+
+
+    <div class="location">
+
+        <span>📍</span>
+
+        <div>
+
+            <small>Deliver to</small>
+
+            <strong id="locationText">
+                Mumbai
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <span>🔍</span>
+
+        <input
+            type="text"
+            id="homeSearch"
+            placeholder="Search for food, restaurant or cuisine..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="./index.html"
+           class="active">
+
+            Home
+
+        </a>
+
+
+        <a href="./menu.html">
+
+            Menu
+
+        </a>
+
+
+        <a href="./cart.html">
+
+            🛒 Cart
+
+            <span
+                class="nav-count"
+                id="cartCount"
+            >
+                0
+            </span>
+
+        </a>
+
+
+        <a href="./admin.html">
+
+            Admin
+
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <span class="hero-small-title">
+
+            ✦ DELICIOUS FOOD, DELIVERED FAST
+
+        </span>
+
+
+
+        <h1>
+
+            Good food.
+
+            <span>
+                Good mood.
+            </span>
+
+        </h1>
+
+
+
+        <p>
+
+            Discover delicious meals from your favourite
+            restaurants and get them delivered straight
+            to your doorstep.
+
+        </p>
+
+
+
+        <!-- BUTTONS -->
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="./menu.html"
+                class="btn primary-btn"
+            >
+
+                Explore Menu →
+
+            </a>
+
+
+
+            <!-- DIRECT POPUP BUTTON -->
+
+            <button
+                type="button"
+                class="btn secondary-btn"
+                id="offerBtn"
+                onclick="showOfferPopup()"
+            >
+
+                🔥 Today's Offers
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- STATS -->
+
+        <div class="hero-stats">
+
+
+            <div>
+
+                <strong>
+                    100+
+                </strong>
+
+                <span>
+                    Dishes
+                </span>
+
+            </div>
+
+
+
+            <div>
+
+                <strong>
+                    30+
+                </strong>
+
+                <span>
+                    Restaurants
+                </span>
+
+            </div>
+
+
+
+            <div>
+
+                <strong>
+                    25 min
+                </strong>
+
+                <span>
+                    Avg. Delivery
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- HERO IMAGES -->
+
+    <div class="hero-images">
+
+
+        <div class="hero-main-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85"
+                alt="Delicious Pizza"
+            >
+
+        </div>
+
+
+
+        <div class="floating-food food-one">
+
+            <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=85"
+                alt="Burger"
+            >
+
+        </div>
+
+
+
+        <div class="floating-food food-two">
+
+            <img
+                src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=300&q=85"
+                alt="Biryani"
+            >
+
+        </div>
+
+
+
+        <div class="delivery-card">
+
+            🚴
+
+            <div>
+
+                <strong>
+                    Fast Delivery
+                </strong>
+
+                <small>
+                    Average 25 minutes
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-heading">
+
+
+        <div>
+
+            <span>
+                EXPLORE
+            </span>
+
+            <h2>
+                What are you craving?
+            </h2>
+
+        </div>
+
+
+        <a
+            href="./menu.html"
+            class="view-all"
+        >
+
+            View all →
+
+        </a>
+
+
+    </div>
+
+
+
+    <div class="category-grid">
+
+
+        <a
+            href="./menu.html?category=Pizza"
+            class="category-card"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=300&q=80"
+                alt="Pizza"
+            >
+
+            <strong>
+                🍕 Pizza
+            </strong>
+
+        </a>
+
+
+
+        <a
+            href="./menu.html?category=Burgers"
+            class="category-card"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80"
+                alt="Burgers"
+            >
+
+            <strong>
+                🍔 Burgers
+            </strong>
+
+        </a>
+
+
+
+        <a
+            href="./menu.html?category=Biryani"
+            class="category-card"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=300&q=80"
+                alt="Biryani"
+            >
+
+            <strong>
+                🍛 Biryani
+            </strong>
+
+        </a>
+
+
+
+        <a
+            href="./menu.html?category=Chinese"
+            class="category-card"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=300&q=80"
+                alt="Chinese Food"
+            >
+
+            <strong>
+                🥡 Chinese
+            </strong>
+
+        </a>
+
+
+
+        <a
+            href="./menu.html?category=South%20Indian"
+            class="category-card"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&w=300&q=80"
+                alt="South Indian"
+            >
+
+            <strong>
+                🥞 South Indian
+            </strong>
+
+        </a>
+
+
+
+        <a
+            href="./menu.html?category=Desserts"
+            class="category-card"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=300&q=80"
+                alt="Desserts"
+            >
+
+            <strong>
+                🍰 Desserts
+            </strong>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     POPULAR RESTAURANTS
+===================================================== -->
+
+<section class="section light-section">
+
+
+    <div class="section-heading">
+
+
+        <div>
+
+            <span>
+                TOP PICKS
+            </span>
+
+            <h2>
+                Popular Restaurants
+            </h2>
+
+        </div>
+
+
+        <a
+            href="./menu.html"
+            class="view-all"
+        >
+
+            Explore menu →
+
+        </a>
+
+
+    </div>
+
+
+
+    <div class="restaurant-grid">
+
+
+        <!-- RESTAURANT 1 -->
+
+        <div class="restaurant-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=85"
+                alt="Oven Story"
+            >
+
+
+            <div class="restaurant-content">
+
+
+                <div class="restaurant-title">
+
+                    <h3>
+                        Oven Story
+                    </h3>
+
+                    <span>
+                        ★ 4.8
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Pizza • Italian • Fast Food
+                </p>
+
+
+                <div class="restaurant-info">
+
+                    <span>
+                        25 min
+                    </span>
+
+                    <span>
+                        ₹₹
+                    </span>
+
+                    <b>
+                        50% OFF
+                    </b>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESTAURANT 2 -->
+
+        <div class="restaurant-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=85"
+                alt="Punjab Grill"
+            >
+
+
+            <div class="restaurant-content">
+
+
+                <div class="restaurant-title">
+
+                    <h3>
+                        Punjab Grill
+                    </h3>
+
+                    <span>
+                        ★ 4.9
+                    </span>
+
+                </div>
+
+
+                <p>
+                    North Indian • Mughlai
+                </p>
+
+
+                <div class="restaurant-info">
+
+                    <span>
+                        32 min
+                    </span>
+
+                    <span>
+                        ₹₹₹
+                    </span>
+
+                    <b>
+                        20% OFF
+                    </b>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESTAURANT 3 -->
+
+        <div class="restaurant-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=85"
+                alt="Wok This Way"
+            >
+
+
+            <div class="restaurant-content">
+
+
+                <div class="restaurant-title">
+
+                    <h3>
+                        Wok This Way
+                    </h3>
+
+                    <span>
+                        ★ 4.6
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Chinese • Asian
+                </p>
+
+
+                <div class="restaurant-info">
+
+                    <span>
+                        25 min
+                    </span>
+
+                    <span>
+                        ₹₹
+                    </span>
+
+                    <b>
+                        ₹100 OFF
+                    </b>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESTAURANT 4 -->
+
+        <div class="restaurant-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=800&q=85"
+                alt="Mumbai Zaika"
+            >
+
+
+            <div class="restaurant-content">
+
+
+                <div class="restaurant-title">
+
+                    <h3>
+                        Mumbai Zaika
+                    </h3>
+
+                    <span>
+                        ★ 4.7
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Street Food • Snacks
+                </p>
+
+
+                <div class="restaurant-info">
+
+                    <span>
+                        18 min
+                    </span>
+
+                    <span>
+                        ₹
+                    </span>
+
+                    <b>
+                        30% OFF
+                    </b>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     OFFER SECTION
+===================================================== -->
+
+<section class="offer-section">
+
+
+    <div class="offer-content">
+
+
+        <span>
+            LIMITED TIME OFFER
+        </span>
+
+
+        <h2>
+
+            Get ₹100 OFF
+
+            <br>
+
+            on your first order
+
+        </h2>
+
+
+        <p>
+
+            Order your favourite food today and enjoy
+            exclusive discounts.
+
+        </p>
+
+
+        <a
+            href="./menu.html"
+            class="btn primary-btn"
+        >
+
+            Order Now →
+
+        </a>
+
+
+    </div>
+
+
+
+    <div class="offer-image">
+
+
+        <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+            alt="Food"
+        >
+
+
+        <div class="offer-badge">
+
+            ₹100
+
+            <br>
+
+            <small>
+                OFF
+            </small>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY US
+===================================================== -->
+
+<section class="why-section">
+
+
+    <div>
+
+        <span>
+            WHY CRAVEGO
+        </span>
+
+        <h2>
+            Food ordering made simple.
+        </h2>
+
+    </div>
+
+
+
+    <div class="why-grid">
+
+
+        <div class="why-card">
+
+            <div>
+                ⚡
+            </div>
+
+            <h3>
+                Lightning Fast
+            </h3>
+
+            <p>
+                Get your favourite food delivered quickly.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <div>
+                🥗
+            </div>
+
+            <h3>
+                Fresh Food
+            </h3>
+
+            <p>
+                Fresh and delicious meals from trusted restaurants.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <div>
+                💳
+            </div>
+
+            <h3>
+                Easy Payment
+            </h3>
+
+            <p>
+                Choose cash, UPI or card at checkout.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <div>
+                🔒
+            </div>
+
+            <h3>
+                Secure Ordering
+            </h3>
+
+            <p>
+                Your order information is handled securely.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <div class="footer-logo">
+
+                🍴
+
+                <strong>
+                    CraveGo
+                </strong>
+
+            </div>
+
+
+            <p>
+                Delicious food delivered to your doorstep.
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="./index.html">
+                Home
+            </a>
+
+            <a href="./menu.html">
+                Menu
+            </a>
+
+            <a href="./cart.html">
+                Cart
+            </a>
+
+            <a href="./admin.html">
+                Admin
+            </a>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                Categories
+            </h4>
+
+            <a href="./menu.html?category=Pizza">
+                Pizza
+            </a>
+
+            <a href="./menu.html?category=Burgers">
+                Burgers
+            </a>
+
+            <a href="./menu.html?category=Biryani">
+                Biryani
+            </a>
+
+            <a href="./menu.html?category=Desserts">
+                Desserts
+            </a>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                Contact
+            </h4>
+
+            <p>
+                📞 +91 98765 43210
+            </p>
+
+            <p>
+                ✉ support@cravego.com
+            </p>
+
+            <p>
+                📍 Mumbai, India
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="copyright">
+
+        © 2026 CraveGo Food Ordering System.
+        All Rights Reserved.
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    id="toast"
+    class="toast"
+>
+
+    Food added to cart ✓
+
+</div>
+
+
+
+<!-- =====================================================
+     INDEX PAGE JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* -----------------------------------------
+       TODAY'S OFFERS
+    ----------------------------------------- */
+
+    function showOfferPopup() {
+
+        alert(
+            "🔥 TODAY'S OFFERS 🔥\n\n" +
+            "🎁 ₹100 OFF on your first order\n" +
+            "🎟️ Coupon: CRAVE100\n\n" +
+            "🚚 FREE DELIVERY above ₹499\n\n" +
+            "🍕 Order now and enjoy!"
+        );
+
+    }
+
+
+
+    /* -----------------------------------------
+       HOME SEARCH
+    ----------------------------------------- */
+
+    const homeSearch =
+        document.getElementById("homeSearch");
+
+
+    if (homeSearch) {
+
+        homeSearch.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Enter") {
+
+                    const query =
+                        this.value.trim();
+
+
+                    if (query.length > 0) {
+
+                        window.location.href =
+                            "./menu.html?search=" +
+                            encodeURIComponent(query);
+
+                    } else {
+
+                        window.location.href =
+                            "./menu.html";
+
+                    }
+
+                }
+
+            }
+        );
+
+    }
+
+
+</script>
+
+
+
+<!-- =====================================================
+     MAIN JAVASCRIPT
+===================================================== -->
+
+<script src="./javascipt.js"></script>
+
+
+</body>
+
+</html>

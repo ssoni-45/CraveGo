@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CraveGo | Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="admin-body">
+
+
+<div class="admin-sidebar">
+
+    <div class="admin-brand">
+
+        🍴
+
+        <div>
+            <strong>CraveGo</strong>
+            <small>ADMIN PANEL</small>
+        </div>
+
+    </div>
+
+
+    <a href="admin.html" class="admin-link active">
+        📊 Dashboard
+    </a>
+
+    <a href="menu.html" class="admin-link">
+        🍔 Food Menu
+    </a>
+
+    <a href="index.html" class="admin-link">
+        🏠 View Website
+    </a>
+
+    <a href="cart.html" class="admin-link">
+        🛒 Cart
+    </a>
+
+
+    <div class="admin-sidebar-bottom">
+
+        <span>
+            👨‍💼 Admin
+        </span>
+
+        <small>
+            Online
+        </small>
+
+    </div>
+
+</div>
+
+
+<main class="admin-main">
+
+
+    <div class="admin-top">
+
+        <div>
+
+            <span>ADMINISTRATION</span>
+
+            <h1>
+                Dashboard
+            </h1>
+
+        </div>
+
+
+        <div class="admin-profile">
+
+            <div>
+                <strong>Admin User</strong>
+                <small>Administrator</small>
+            </div>
+
+            <span>
+                👨‍💼
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+
+    <div class="admin-stats">
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                🛒
+            </div>
+
+            <div>
+                <span>Total Orders</span>
+                <strong id="adminOrders">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                👥
+            </div>
+
+            <div>
+                <span>Total Customers</span>
+                <strong>
+                    1,250+
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                🍔
+            </div>
+
+            <div>
+                <span>Total Food Items</span>
+                <strong>
+                    24
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                💰
+            </div>
+
+            <div>
+                <span>Total Revenue</span>
+                <strong id="adminRevenue">
+                    ₹0
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DASHBOARD GRID -->
+
+    <div class="admin-dashboard-grid">
+
+
+        <!-- RECENT ORDERS -->
+
+        <section class="admin-panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <span>ORDERS</span>
+
+                    <h2>
+                        Recent Orders
+                    </h2>
+                </div>
+
+                <button
+                    class="admin-small-btn"
+                    id="refreshOrders">
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+            <div class="order-table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="adminOrdersTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="admin-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span>MANAGEMENT</span>
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <button id="addFoodBtn">
+                    <span>🍔</span>
+                    <strong>Add Food</strong>
+                    <small>Add a new dish</small>
+                </button>
+
+
+                <button id="viewMenuBtn">
+                    <span>📋</span>
+                    <strong>View Menu</strong>
+                    <small>Manage food items</small>
+                </button>
+
+
+                <button id="offersBtn">
+                    <span>🔥</span>
+                    <strong>Offers</strong>
+                    <small>Manage discounts</small>
+                </button>
+
+
+                <button id="customersBtn">
+                    <span>👥</span>
+                    <strong>Customers</strong>
+                    <small>View customers</small>
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- ADD FOOD -->
+
+    <section class="admin-panel add-food-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span>MENU MANAGEMENT</span>
+
+                <h2>
+                    Add New Food Item
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-form">
+
+            <input
+                type="text"
+                id="newFoodName"
+                placeholder="Food name">
+
+
+            <input
+                type="text"
+                id="newFoodCategory"
+                placeholder="Category">
+
+
+            <input
+                type="number"
+                id="newFoodPrice"
+                placeholder="Price">
+
+
+            <input
+                type="text"
+                id="newFoodRestaurant"
+                placeholder="Restaurant">
+
+
+            <button
+                class="btn primary-btn"
+                id="saveFoodBtn">
+
+                Add Food
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div id="toast" class="toast">
+    Done ✓
+</div>
+
+
+<script src="javascript.js"></script>
+
+</body>
+</html>
